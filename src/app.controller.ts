@@ -1,4 +1,13 @@
-import { Controller, Delete, Get, Inject, Patch, Post } from '@nestjs/common';
+import {
+    Controller,
+    Delete,
+    Get,
+    Inject,
+    NotFoundException,
+    Param,
+    Patch,
+    Post,
+} from '@nestjs/common';
 import { AppService } from './app.service';
 
 interface Movie {
@@ -27,12 +36,14 @@ export class AppController {
     }
 
     @Get(':id')
-    getMovie() {
-        return {
-            id: 1,
-            title: "Harry Potter and the Philosopher's Stone",
-            character: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint'],
-        };
+    getMovie(@Param('id') id: string) {
+        const movie = this.movies.find((m) => m.id === +id);
+
+        if (!movie) {
+            throw new NotFoundException('존재하지 않는 ID의 영화입니다!');
+        }
+
+        return movie;
     }
 
     @Post()
