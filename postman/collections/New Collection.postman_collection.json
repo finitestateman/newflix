@@ -45,8 +45,7 @@
           "variable": [
             {
               "key": "id",
-              "value": "1",
-              "uuid": "3121bbee-ec53-4213-9a01-c35e4ba148bc"
+              "value": "1"
             }
           ]
         }
@@ -59,6 +58,15 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Frozen\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
           "raw": "http://localhost:3000/movie",
           "protocol": "http",
@@ -102,8 +110,7 @@
           "variable": [
             {
               "key": "id",
-              "value": "3",
-              "uuid": "f1c4adf3-82d4-4dc5-9d7e-5ccb80c3578a"
+              "value": "3"
             }
           ]
         }
@@ -130,8 +137,7 @@
           "variable": [
             {
               "key": "id",
-              "value": "1",
-              "uuid": "66964929-020a-4113-91b6-46e67f865239"
+              "value": "1"
             }
           ]
         }

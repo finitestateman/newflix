@@ -1,4 +1,5 @@
 import {
+    Body,
     Controller,
     Delete,
     Get,
@@ -28,6 +29,8 @@ export class AppController {
         },
     ];
 
+    private idCoutner = 3;
+
     constructor(@Inject(AppService) private readonly appService: AppService) {}
 
     @Get()
@@ -47,11 +50,15 @@ export class AppController {
     }
 
     @Post()
-    postMovie() {
-        return {
-            id: 3,
-            title: 'Avengers: Endgame',
+    postMovie(@Body('title') title: string) {
+        const movie: Movie = {
+            id: this.idCoutner++,
+            title,
         };
+
+        this.movies.push(movie);
+
+        return movie;
     }
 
     @Patch(':id')
