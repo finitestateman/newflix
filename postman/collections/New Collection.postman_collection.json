@@ -12,7 +12,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/movie",
+          "raw": "http://localhost:3000/movie?title=Harry Potter and the Philosopher's Stone",
           "protocol": "http",
           "host": [
             "localhost"
@@ -20,6 +20,14 @@
           "port": "3000",
           "path": [
             "movie"
+          ],
+          "query": [
+            {
+              "key": "title",
+              "value": "Harry Potter and the Philosopher's Stone",
+              "type": "text",
+              "uuid": "66b13b70-d806-472d-9478-2b0c9e5de489"
+            }
           ]
         }
       },
