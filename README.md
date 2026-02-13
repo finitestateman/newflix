@@ -34,6 +34,9 @@ $ pnpm install
 ## Compile and run the project
 
 ```bash
+# type check
+$ pnpm run typecheck
+
 # development
 $ pnpm run start
 
