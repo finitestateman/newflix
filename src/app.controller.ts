@@ -1,31 +1,36 @@
 import { Controller, Delete, Get, Inject, Patch, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 
+interface Movie {
+    id: number;
+    title: string;
+}
+
 @Controller('movie')
 export class AppController {
+    private movies: Movie[] = [
+        {
+            id: 1,
+            title: "Harry Potter and the Philosopher's Stone",
+        },
+        {
+            id: 2,
+            title: 'The Lord of the Rings: The Fellowship of the Ring',
+        },
+    ];
+
     constructor(@Inject(AppService) private readonly appService: AppService) {}
 
     @Get()
     getMovies() {
-        return [
-            {
-                id: 1,
-                name: "Harry Potter and the Philosopher's Stone",
-                character: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint'],
-            },
-            {
-                id: 2,
-                name: 'The Lord of the Rings: The Fellowship of the Ring',
-                character: ['Elijah Wood', 'Ian McKellen', 'Viggo Mortensen'],
-            },
-        ];
+        return this.movies;
     }
 
     @Get(':id')
     getMovie() {
         return {
             id: 1,
-            name: "Harry Potter and the Philosopher's Stone",
+            title: "Harry Potter and the Philosopher's Stone",
             character: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint'],
         };
     }
@@ -34,8 +39,7 @@ export class AppController {
     postMovie() {
         return {
             id: 3,
-            name: 'Avengers: Endgame',
-            character: ['Robert Downey Jr.', 'Chris Evans', 'Chris Hemsworth'],
+            title: 'Avengers: Endgame',
         };
     }
 
@@ -43,8 +47,7 @@ export class AppController {
     patchMovie() {
         return {
             id: 1,
-            name: 'Harry Potter and the Chamber of Secrets',
-            character: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint'],
+            title: 'Harry Potter and the Chamber of Secrets',
         };
     }
 
