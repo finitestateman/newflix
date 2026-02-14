@@ -1,158 +1,135 @@
 {
-  "info": {
-    "_postman_id": "4a5b57b6-82c1-4ddf-ad62-af52e0988164",
-    "name": "newflix",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "/movie",
-      "id": "5365a7ab-aeb0-46b3-86ab-72862c2e4c78",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/movie?title=Harry Potter and the Philosopher's Stone",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "movie"
-          ],
-          "query": [
-            {
-              "key": "title",
-              "value": "Harry Potter and the Philosopher's Stone",
-              "type": "text",
-              "uuid": "66b13b70-d806-472d-9478-2b0c9e5de489"
-            }
-          ]
-        }
-      },
-      "response": []
+    "info": {
+        "_postman_id": "4a5b57b6-82c1-4ddf-ad62-af52e0988164",
+        "name": "newflix",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
-    {
-      "name": "/movie/:id",
-      "id": "1c216ad4-48b8-455d-a6b3-1666633ed4b4",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/movie/:id",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "movie",
-            ":id"
-          ],
-          "variable": [
-            {
-              "key": "id",
-              "value": "3",
-              "uuid": "3121bbee-ec53-4213-9a01-c35e4ba148bc"
-            }
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "/movie",
-      "id": "686e3c9c-a53e-44af-beb3-fe3f913ba9fb",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"title\": \"Frozen\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
+    "item": [
+        {
+            "name": "/movie",
+            "id": "5365a7ab-aeb0-46b3-86ab-72862c2e4c78",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/movie?title=Harry Potter and the Philosopher's Stone",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["movie"],
+                    "query": [
+                        {
+                            "key": "title",
+                            "value": "Harry Potter and the Philosopher's Stone",
+                            "type": "text",
+                            "uuid": "66b13b70-d806-472d-9478-2b0c9e5de489"
+                        }
+                    ]
+                }
+            },
+            "response": []
         },
-        "url": {
-          "raw": "http://localhost:3000/movie",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "movie"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "/movie/:id",
-      "id": "cf3b8992-021d-4a40-b271-fb7ceb6795d8",
-      "request": {
-        "method": "PATCH",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"title\": \"Sherlock Holmes\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
+        {
+            "name": "/movie/:id",
+            "id": "1c216ad4-48b8-455d-a6b3-1666633ed4b4",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/movie/:id",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["movie", ":id"],
+                    "variable": [
+                        {
+                            "key": "id",
+                            "value": "3",
+                            "uuid": "3121bbee-ec53-4213-9a01-c35e4ba148bc"
+                        }
+                    ]
+                }
+            },
+            "response": []
         },
-        "url": {
-          "raw": "http://localhost:3000/movie/:id",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "movie",
-            ":id"
-          ],
-          "variable": [
-            {
-              "key": "id",
-              "value": "1",
-              "uuid": "f1c4adf3-82d4-4dc5-9d7e-5ccb80c3578a"
-            }
-          ]
+        {
+            "name": "/movie",
+            "id": "686e3c9c-a53e-44af-beb3-fe3f913ba9fb",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Frozen\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:3000/movie",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["movie"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "/movie/:id",
+            "id": "cf3b8992-021d-4a40-b271-fb7ceb6795d8",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Sherlock Holmes\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:3000/movie/:id",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["movie", ":id"],
+                    "variable": [
+                        {
+                            "key": "id",
+                            "value": "1",
+                            "uuid": "f1c4adf3-82d4-4dc5-9d7e-5ccb80c3578a"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "/movie/:id",
+            "id": "91a6bde9-7eee-4572-885f-2ae7f7cb2a15",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/movie/:id",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["movie", ":id"],
+                    "variable": [
+                        {
+                            "key": "id",
+                            "value": "1"
+                        }
+                    ]
+                }
+            },
+            "response": []
         }
-      },
-      "response": []
-    },
-    {
-      "name": "/movie/:id",
-      "id": "91a6bde9-7eee-4572-885f-2ae7f7cb2a15",
-      "request": {
-        "method": "DELETE",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/movie/:id",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "movie",
-            ":id"
-          ],
-          "variable": [
-            {
-              "key": "id",
-              "value": "1"
-            }
-          ]
-        }
-      },
-      "response": []
-    }
-  ]
+    ]
 }
