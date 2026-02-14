@@ -22,7 +22,7 @@ export class AppService {
         },
     ];
 
-    private idCoutner = 3;
+    private idCoutner = 4;
 
     getManyMovies(title?: string) {
         if (!title) {
@@ -38,6 +38,17 @@ export class AppService {
         if (!movie) {
             throw new NotFoundException('존재하지 않는 ID의 영화입니다!');
         }
+
+        return movie;
+    }
+
+    createMovie(title: string) {
+        const movie: Movie = {
+            id: this.idCoutner++,
+            title,
+        };
+
+        this.movies.push(movie);
 
         return movie;
     }
