@@ -28,6 +28,8 @@ export class UpdateMovieDto {
     // @IsArray()
     // @IsEnum(MovieGenre)
     // @IsDate() // 실제 날짜 객체여야 함
-    @IsDateString() // 날짜 형식의 문자열
+    // @IsDateString() // 날짜 형식의 문자열
+    // @IsDivisibleBy(5)
+    // @Max(100) // @Main(50)
     test?: string;
 }
