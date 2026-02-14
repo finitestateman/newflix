@@ -1,11 +1,35 @@
-import { IsDateString, IsNotEmpty, IsOptional } from 'class-validator';
+import {
+    IsDateString,
+    IsNotEmpty,
+    IsOptional,
+    Validate,
+    ValidatorConstraint,
+    type ValidationArguments,
+    type ValidatorConstraintInterface,
+} from 'class-validator';
 
 enum MovieGenre {
     Aaction = 'action',
     Fantasy = 'fantasy',
 }
 
+@ValidatorConstraint()
+class PasswordValidator implements ValidatorConstraintInterface {
+    validate(
+        value: any,
+        validationArguments?: ValidationArguments,
+    ): Promise<boolean> | boolean {
+        return value.length > 4 && value.length < 8;
+    }
+    defaultMessage?(validationArguments?: ValidationArguments): string {
+        return '비밀번호의 길이는 4~8자 사이여야 합니다. 입력된 비밀번호: ($value)';
+    }
+}
+
 export class UpdateMovieDto {
+    fun() {
+        new PasswordValidator();
+    }
     @IsNotEmpty() // 값이 있을 때 빈 문자열이면 안 된다
     @IsOptional() // 값이 선택적
     title?: string;
@@ -40,5 +64,8 @@ export class UpdateMovieDto {
     // @MinLength(5)
     // @IsUUID()
     // @IsLatLong()
+    @Validate(PasswordValidator, {
+        message: '다른 에러 메시지',
+    })
     test?: string;
 }
