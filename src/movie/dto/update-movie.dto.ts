@@ -2,9 +2,11 @@ import {
     IsDateString,
     IsNotEmpty,
     IsOptional,
+    registerDecorator,
     Validate,
     ValidatorConstraint,
     type ValidationArguments,
+    type ValidationOptions,
     type ValidatorConstraintInterface,
 } from 'class-validator';
 
@@ -13,7 +15,9 @@ enum MovieGenre {
     Fantasy = 'fantasy',
 }
 
-@ValidatorConstraint()
+@ValidatorConstraint({
+    async: true,
+})
 class PasswordValidator implements ValidatorConstraintInterface {
     validate(
         value: any,
@@ -24,6 +28,18 @@ class PasswordValidator implements ValidatorConstraintInterface {
     defaultMessage?(validationArguments?: ValidationArguments): string {
         return '비밀번호의 길이는 4~8자 사이여야 합니다. 입력된 비밀번호: ($value)';
     }
+}
+
+function IsPasswordValid(validationOptions?: ValidationOptions) {
+    // biome-ignore lint/complexity/noBannedTypes: <explanation>
+    return (object: Object, propertyName: string) => {
+        registerDecorator({
+            target: object.constructor,
+            propertyName: propertyName,
+            options: validationOptions,
+            validator: PasswordValidator,
+        });
+    };
 }
 
 export class UpdateMovieDto {
@@ -64,8 +80,8 @@ export class UpdateMovieDto {
     // @MinLength(5)
     // @IsUUID()
     // @IsLatLong()
-    @Validate(PasswordValidator, {
-        message: '다른 에러 메시지',
+    @IsPasswordValid({
+        message: '다른메시지',
     })
     test?: string;
 }
