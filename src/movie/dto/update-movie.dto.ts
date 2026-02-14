@@ -31,5 +31,14 @@ export class UpdateMovieDto {
     // @IsDateString() // 날짜 형식의 문자열
     // @IsDivisibleBy(5)
     // @Max(100) // @Main(50)
+    // @Contains('code factory')
+    // @NotContains('code factory')
+    // @IsAlphanumeric()
+    // @IsCreditCard()
+    // @IsHexColor()
+    // @MaxLength(10)
+    // @MinLength(5)
+    // @IsUUID()
+    // @IsLatLong()
     test?: string;
 }
