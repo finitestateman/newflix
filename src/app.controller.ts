@@ -11,84 +11,65 @@ import {
     Query,
 } from '@nestjs/common';
 import { AppService } from './app.service';
-
-interface Movie {
-    id: number;
-    title: string;
-}
+import { Movie } from './app.service';
 
 @Controller('movie')
 export class AppController {
-    private movies: Movie[] = [
-        {
-            id: 1,
-            title: "Harry Potter and the Philosopher's Stone",
-        },
-        {
-            id: 2,
-            title: 'The Lord of the Rings: The Fellowship of the Ring',
-        },
-    ];
-
-    private idCoutner = 3;
+    // private idCoutner = 3;
 
     constructor(@Inject(AppService) private readonly appService: AppService) {}
 
     @Get()
     getMovies(@Query('title') title?: string) {
-        if (!title) {
-            return this.movies;
-        }
-
-        return this.movies.filter((m) => m.title.startsWith(title));
+        return this.appService.getManyMovies(title);
     }
 
-    @Get(':id')
-    getMovie(@Param('id') id: string) {
-        const movie = this.movies.find((m) => m.id === +id);
+    // @Get(':id')
+    // getMovie(@Param('id') id: string) {
+    //     const movie = this.movies.find((m) => m.id === +id);
 
-        if (!movie) {
-            throw new NotFoundException('존재하지 않는 ID의 영화입니다!');
-        }
+    //     if (!movie) {
+    //         throw new NotFoundException('존재하지 않는 ID의 영화입니다!');
+    //     }
 
-        return movie;
-    }
+    //     return movie;
+    // }
 
-    @Post()
-    postMovie(@Body('title') title: string) {
-        const movie: Movie = {
-            id: this.idCoutner++,
-            title,
-        };
+    // @Post()
+    // postMovie(@Body('title') title: string) {
+    //     const movie: Movie = {
+    //         id: this.idCoutner++,
+    //         title,
+    //     };
 
-        this.movies.push(movie);
+    //     this.movies.push(movie);
 
-        return movie;
-    }
+    //     return movie;
+    // }
 
-    @Patch(':id')
-    patchMovie(@Param('id') id: string, @Body('title') title: string) {
-        const movie = this.movies.find((m) => m.id === +id);
+    // @Patch(':id')
+    // patchMovie(@Param('id') id: string, @Body('title') title: string) {
+    //     const movie = this.movies.find((m) => m.id === +id);
 
-        if (!movie) {
-            throw new NotFoundException('존재하지 않는 ID의 영화입니다!');
-        }
+    //     if (!movie) {
+    //         throw new NotFoundException('존재하지 않는 ID의 영화입니다!');
+    //     }
 
-        Object.assign(movie, { title });
+    //     Object.assign(movie, { title });
 
-        return movie;
-    }
+    //     return movie;
+    // }
 
-    @Delete(':id')
-    deleteMovie(@Param('id') id: string) {
-        const movieIndex = this.movies.findIndex((m) => m.id === +id);
+    // @Delete(':id')
+    // deleteMovie(@Param('id') id: string) {
+    //     const movieIndex = this.movies.findIndex((m) => m.id === +id);
 
-        if (movieIndex === -1) {
-            throw new NotFoundException('존재하지 않는 ID의 영화입니다!');
-        }
+    //     if (movieIndex === -1) {
+    //         throw new NotFoundException('존재하지 않는 ID의 영화입니다!');
+    //     }
 
-        this.movies.splice(movieIndex, 1);
+    //     this.movies.splice(movieIndex, 1);
 
-        return id;
-    }
+    //     return id;
+    // }
 }
