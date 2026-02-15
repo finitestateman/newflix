@@ -2,8 +2,8 @@ import { IsNotEmpty } from 'class-validator';
 
 export class CreateMovieDto {
     @IsNotEmpty()
-    title: string;
+    declare title: string;
 
     @IsNotEmpty()
-    genre: string;
+    declare genre: string;
 }
