@@ -68,7 +68,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"title\": \"Frozen\",\n    \"genre\": \"animation\"\n}",
+          "raw": "{\n    \"title\": \"Frozen\"\n    // \"genre\": \"animation\"\n}",
           "options": {
             "raw": {
               "language": "json"
