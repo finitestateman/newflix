@@ -1,10 +1,8 @@
 import {
-    ChildEntity,
     Column,
     CreateDateColumn,
     Entity,
     PrimaryGeneratedColumn,
-    TableInheritance,
     UpdateDateColumn,
     VersionColumn,
 } from 'typeorm';
@@ -21,10 +19,7 @@ export class BaseEntity {
 }
 
 @Entity()
-@TableInheritance({
-    column: { type: 'varchar', name: 'type' },
-})
-export class Content extends BaseEntity {
+export class Movie extends BaseEntity {
     @PrimaryGeneratedColumn()
     declare id: number;
 
@@ -33,16 +28,4 @@ export class Content extends BaseEntity {
 
     @Column()
     declare genre: string;
-}
-
-@ChildEntity()
-export class Movie extends Content {
-    @Column()
-    declare runtime: number;
-}
-
-@ChildEntity()
-export class Series extends Content {
-    @Column()
-    declare seriesCount: number;
 }
