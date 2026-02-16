@@ -24,7 +24,7 @@
           "query": [
             {
               "key": "title",
-              "value": "Harry Potter and the Philosopher's Stone",
+              "value": "The Lord",
               "uuid": "66b13b70-d806-472d-9478-2b0c9e5de489",
               "disabled": true
             }
@@ -68,7 +68,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"title\": \"The Lord of the Rings\",\n    \"genre\": \"action\"\n}",
+          "raw": "{\n    \"title\": \"Inception\",\n    \"genre\": \"fantasy\"\n}",
           "options": {
             "raw": {
               "language": "json"
