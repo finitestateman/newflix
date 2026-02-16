@@ -68,7 +68,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"title\": \"Inception\",\n    \"genre\": \"fantasy\"\n}",
+          "raw": "{\n    \"title\": \"The Lord of the Rings\",\n    \"genre\": \"action\",\n    \"detail\": \"Concerning Hobbits\"\n}",
           "options": {
             "raw": {
               "language": "json"
