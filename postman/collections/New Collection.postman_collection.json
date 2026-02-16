@@ -97,7 +97,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"genre\": \"Sci-Fi\"\n}",
+          "raw": "{\n    \"title\": \"Avengers\",\n    \"detail\": \"Ironman saves the world\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -118,7 +118,7 @@
           "variable": [
             {
               "key": "id",
-              "value": "2"
+              "value": "1"
             }
           ]
         }
