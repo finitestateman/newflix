@@ -151,6 +151,36 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "/series",
+      "id": "0eeaa585-d4f3-46b8-8314-3cfdd7652aca",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"The Glory\",\n    \"genre\": \"drama\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/movie/series",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "movie",
+            "series"
+          ]
+        }
+      },
+      "response": []
     }
   ]
 }
