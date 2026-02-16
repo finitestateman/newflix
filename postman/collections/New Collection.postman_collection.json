@@ -68,7 +68,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"title\": \"Frozen\"\n    // \"genre\": \"animation\"\n}",
+          "raw": "{\n    \"title\": \"The Lord of the Rings\",\n    \"genre\": \"action\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -97,7 +97,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"title\": \"Sherlock Holmes\",\n    \"genre\": \"crime\"\n}",
+          "raw": "{\n    \"genre\": \"Sci-Fi\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -118,7 +118,7 @@
           "variable": [
             {
               "key": "id",
-              "value": "1"
+              "value": "2"
             }
           ]
         }
@@ -145,7 +145,7 @@
           "variable": [
             {
               "key": "id",
-              "value": "1"
+              "value": "2"
             }
           ]
         }
