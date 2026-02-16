@@ -1,0 +1,24 @@
+name: newflix
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: newflix-postgres
+    restart: no
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5555:5432"
+    volumes:
+      - newflix-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  newflix-postgres-data:
+    name: newflix-postgres-data
